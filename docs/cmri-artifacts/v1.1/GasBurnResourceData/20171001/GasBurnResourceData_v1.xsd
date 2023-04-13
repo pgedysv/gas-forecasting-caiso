@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:a="http://langdale.com.au/2005/Message#" 
+    xmlns:sawsdl="http://www.w3.org/ns/sawsdl" targetNamespace="http://www.caiso.com/soa/GasBurnResourceData_v1.xsd#" elementFormDefault="qualified" attributeFormDefault="unqualified" 
+    xmlns="http://langdale.com.au/2005/Message#" 
+    xmlns:m="http://www.caiso.com/soa/GasBurnResourceData_v1.xsd#">
+    <xs:annotation>
+        <xs:documentation>v1 : Fall 2017</xs:documentation>
+    </xs:annotation>
+    <xs:element name="GasBurnResourceData" type="m:GasBurnResourceData"/>
+    <xs:complexType name="GasBurnResourceData">
+        <xs:sequence>
+            <xs:element name="MessageHeader" type="m:MessageHeader" minOccurs="0"/>
+            <xs:element name="MessagePayload" type="m:MessagePayload"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MessageHeader">
+        <xs:annotation>
+            <xs:documentation>Message header containing descriptive information about the message.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="TimeDate" type="xs:dateTime">
+                <xs:annotation>
+                    <xs:documentation>Application level relevant time and date for when this  instance of the message was produced.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Source" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation>Source system which provides data for this service. Examples include ADS, CMRI, EMS, IFM, RLC, RTM, SIBR, SLIC, External App, etc.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Version" type="xs:string" default="v20171001">
+                <xs:annotation>
+                    <xs:documentation>Date reflecting the release this latest version update was related to.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="MessagePayload">
+        <xs:sequence>
+            <xs:element name="GasBurnResourceRecord" type="m:GasBurnResourceRecord" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CMRIReportRecord" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#CMRIReportRecord">
+        <xs:annotation>
+            <xs:documentation>A superclass that captures general information regarding CMRI reports</xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+    <xs:complexType name="GasBurnResourceRecord" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#GasBurnResourceRecord">
+        <xs:annotation>
+            <xs:documentation>Resource-level Gas Burn Record</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="m:CMRIReportRecord">
+                <xs:sequence>
+                    <xs:element name="executionType" minOccurs="1" maxOccurs="1" type="m:PTRExecutionType" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#CMRIReportRecord.executionType">
+                        <xs:annotation>
+                            <xs:documentation>For Day-Ahead market: IFM, for Real-Time market: HASP or RTUC</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="forecastZone" minOccurs="0" maxOccurs="1" type="xs:string" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#GasBurnResourceRecord.forecastZone">
+                        <xs:annotation>
+                            <xs:documentation>The forecast zone</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="gasCompany" minOccurs="1" maxOccurs="1" type="xs:string" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#GasBurnResourceRecord.gasCompany">
+                        <xs:annotation>
+                            <xs:documentation>The gas company</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="gasCustomerMeter" minOccurs="1" maxOccurs="1" type="xs:string" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#GasBurnResourceRecord.gasCustomerMeter">
+                        <xs:annotation>
+                            <xs:documentation>The gas customer meter</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="marketEndTime" minOccurs="0" maxOccurs="1" type="xs:dateTime" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#CMRIReportRecord.marketEndTime">
+                        <xs:annotation>
+                            <xs:documentation>End time of the market horizon in Greenwich Mean Time.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="marketStartTime" minOccurs="0" maxOccurs="1" type="xs:dateTime" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#CMRIReportRecord.marketStartTime">
+                        <xs:annotation>
+                            <xs:documentation>Start time of the market horizon in Greenwich Mean Time.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="marketType" minOccurs="1" maxOccurs="1" type="m:MarketType" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#CMRIReportRecord.marketType">
+                        <xs:annotation>
+                            <xs:documentation>Type of market or process in which the curve applies to: Day-Ahead or Real-TIme Market</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="pipeline" minOccurs="1" maxOccurs="1" type="xs:string" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#GasBurnResourceRecord.pipeline">
+                        <xs:annotation>
+                            <xs:documentation>The pipeline</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="resource" minOccurs="1" maxOccurs="1" type="xs:string" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#CMRIReportRecord.resource">
+                        <xs:annotation>
+                            <xs:documentation>Unique identifier of a resource. InterTie resources can be represented by either a registered resource ID from MF or by a SIBR formed transaction ID.</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="serviceArea" minOccurs="1" maxOccurs="1" type="xs:string" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#GasBurnResourceRecord.serviceArea">
+                        <xs:annotation>
+                            <xs:documentation>The gas service area</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="transmissionZone" minOccurs="0" maxOccurs="1" type="xs:string" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#GasBurnResourceRecord.transmissionZone">
+                        <xs:annotation>
+                            <xs:documentation>The transmission zone</xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element name="TradeIntervalData" minOccurs="1" maxOccurs="unbounded" type="m:TradeIntervalData" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#GasBurnResourceRecord.TradeIntervalData">
+                        <xs:annotation/>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:simpleType name="MarketType" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#MarketType">
+        <xs:annotation>
+            <xs:documentation>maket type</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="2DA">
+                <xs:annotation>
+                    <xs:documentation>Two Day-Ahead market</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="DAM">
+                <xs:annotation>
+                    <xs:documentation>day ahead market</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="RTM">
+                <xs:annotation>
+                    <xs:documentation>real time market</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PTRExecutionType" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#PTRExecutionType">
+        <xs:annotation>
+            <xs:documentation>Used in reports of mitigation results to indicate day-ahead or real-time mitigation.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="HASP">
+                <xs:annotation/>
+            </xs:enumeration>
+            <xs:enumeration value="IFM">
+                <xs:annotation/>
+            </xs:enumeration>
+            <xs:enumeration value="RTD">
+                <xs:annotation>
+                    <xs:documentation>Real Time Dispatch</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="RTUC">
+                <xs:annotation/>
+            </xs:enumeration>
+            <xs:enumeration value="RUC">
+                <xs:annotation/>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="TradeHourData" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#TradeHourData">
+        <xs:annotation/>
+        <xs:sequence>
+            <xs:element name="gasBurn" minOccurs="1" maxOccurs="1" type="xs:string" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#TradeHourData.gasBurn">
+                <xs:annotation>
+                    <xs:documentation>The gas burn data in MMcf. The gas burn data is generally a float value. However, it is added here as String to support a requirement where the market will publish "NHR" in case when the resource is associated with a gas company but doesn't have a heat curve defined.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="intervalEndTime" minOccurs="0" maxOccurs="1" type="xs:dateTime" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#TradeHourData.intervalEndTime">
+                <xs:annotation>
+                    <xs:documentation>End time of the interval within the Market Run in Greenwich Mean Time.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="intervalStartTime" minOccurs="1" maxOccurs="1" type="xs:dateTime" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#TradeHourData.intervalStartTime">
+                <xs:annotation>
+                    <xs:documentation>Start time of the interval within the Market Run in Greenwich Mean Time.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="TradeIntervalData" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#TradeIntervalData">
+        <xs:annotation/>
+        <xs:complexContent>
+            <xs:extension base="m:TradeHourData"></xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:simpleType name="YesNo" sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#YesNo">
+        <xs:annotation/>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NO">
+                <xs:annotation/>
+            </xs:enumeration>
+            <xs:enumeration value="YES">
+                <xs:annotation/>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

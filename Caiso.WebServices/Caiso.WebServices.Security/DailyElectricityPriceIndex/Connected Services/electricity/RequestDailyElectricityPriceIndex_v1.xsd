@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://langdale.com.au/2005/Message#" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:m="http://www.caiso.com/soa/RequestDailyElectricityPriceIndex_v1.xsd#" xmlns:a="http://langdale.com.au/2005/Message#" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.caiso.com/soa/RequestDailyElectricityPriceIndex_v1.xsd#" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>v1 : Fall Release 2017 - Bidding Rules Enhancement Part B</xs:documentation>
+  </xs:annotation>
+  <xs:element name="RequestDailyElectricityPriceIndex" type="m:RequestDailyElectricityPriceIndex" />
+  <xs:complexType name="RequestDailyElectricityPriceIndex">
+    <xs:sequence>
+      <xs:element name="MessageHeader" type="m:MessageHeader" />
+      <xs:element name="MessagePayload" type="m:MessagePayload" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageHeader">
+    <xs:annotation>
+      <xs:documentation>Message header containing descriptive information about the message.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TimeDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Application level relevant time and date for when this  instance of the message was produced.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Source" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Source system which provides data for this service. Examples include ADS, CMRI, EMS, IFM, RLC, RTM, SIBR, SLIC, External App, etc.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="v20171001" name="Version" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Date reflecting the release this latest version update was related to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessagePayload">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="RequestDailyElectricityPriceIndexRecord" type="m:RequestDailyElectricityPriceIndexRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#MarketType" name="MarketType">
+    <xs:annotation>
+      <xs:documentation>maket type</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DAM">
+        <xs:annotation>
+          <xs:documentation>day ahead market</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="RTM">
+        <xs:annotation>
+          <xs:documentation>real time market</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#RequestParameters" name="RequestDailyElectricityPriceIndexRecord">
+    <xs:annotation>
+      <xs:documentation>Parameters used commonly in requests.</xs:documentation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#RequestParameters.dateTimeEnd" minOccurs="1" maxOccurs="1" name="dateTimeEnd" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Ending DateTime of the time period for which the data is requested. Data ranging from n intervals up to 31 days can be included in the report.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#RequestParameters.dateTimeStart" minOccurs="1" maxOccurs="1" name="dateTimeStart" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Starting DateTime of the time period for which the data is requested. Data ranging from n intervals up to 31 days can be included in the report.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#RequestParameters.marketType" minOccurs="1" maxOccurs="1" name="marketType" type="m:MarketType">
+        <xs:annotation>
+          <xs:documentation>Type of market in which the transaction applies to: Day-Ahead or Real-TIme Market.</xs:documentation>
+          <xs:documentation>A user may be able to query the report by only one market type.</xs:documentation>
+          <xs:documentation>Valid values: DAM, RTM</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#RequestParameters.ResourceList" minOccurs="0" maxOccurs="unbounded" name="ResourceList" type="m:ResourceList">
+        <xs:annotation />
+      </xs:element>
+      <xs:element sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#RequestParameters.SchedulingCoordinatorList" minOccurs="1" maxOccurs="unbounded" name="SchedulingCoordinatorList" type="m:SchedulingCoordinatorList">
+        <xs:annotation />
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#ResourceList" name="ResourceList">
+    <xs:annotation>
+      <xs:documentation>Specifies the Resource unique identifiers that may be used in a report request.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#ResourceList.resource" minOccurs="1" maxOccurs="1" name="resource" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identifier of a resource. InterTie resources can be represented by either a registered resource ID from MF or by a SIBR formed transaction ID.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#SchedulingCoordinatorList" name="SchedulingCoordinatorList">
+    <xs:annotation>
+      <xs:documentation>Specifies the SchedulingCoordinator unique identifiers that may be used in a report request.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element sawsdl:modelReference="http://iec.ch/TC57/2003/CIM-schema-cim10#SchedulingCoordinatorList.schedulingCoordinator" minOccurs="1" maxOccurs="1" name="schedulingCoordinator" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Unique identifier of the Scheduling Coordinator.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

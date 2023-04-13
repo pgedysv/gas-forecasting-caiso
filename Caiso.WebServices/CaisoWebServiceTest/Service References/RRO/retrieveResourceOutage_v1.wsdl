@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:typeIn="http://www.caiso.com/soa/RequestResourceOutage_v1.xsd#" xmlns:typeFault="http://www.caiso.com/soa/2006-06-13/StandardOutput.xsd" xmlns:tns="http://www.caiso.com/soa/retrieveResourceOutage_v1.wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:attach="http://www.caiso.com/soa/AttachmentInfor_v1.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:typeHeader="http://www.caiso.com/soa/2006-06-13/StandardAttachmentInfor.xsd" targetNamespace="http://www.caiso.com/soa/retrieveResourceOutage_v1.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+     A web service to retrieve Resource outage data     
+   </wsdl:documentation>
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="StandardAttachmentInfor.xsd" namespace="http://www.caiso.com/soa/2006-06-13/StandardAttachmentInfor.xsd" />
+    </xs:schema>
+    <xs:schema>
+      <xs:import schemaLocation="RequestResourceOutage_v1.xsd" namespace="http://www.caiso.com/soa/RequestResourceOutage_v1.xsd#" />
+    </xs:schema>
+    <xs:schema>
+      <xs:import schemaLocation="StandardOutput.xsd" namespace="http://www.caiso.com/soa/2006-06-13/StandardOutput.xsd" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://www.caiso.com/soa/AttachmentInfor_v1.xsd" elementFormDefault="qualified" targetNamespace="http://www.caiso.com/soa/AttachmentInfor_v1.xsd" version="1.0">
+      <xs:element name="AttachmentInfor" type="tns:Attachment" />
+      <xs:complexType name="Attachment">
+        <xs:sequence>
+          <xs:element xmlns:ns1="http://www.w3.org/2005/05/xmlmime" ns1:expectedContentTypes="application/xml" name="attachmentData" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="retrieveResourceOutageHeader">
+    <wsdl:part name="standardAttachmentInfor" element="typeHeader:standardAttachmentInfor">
+      <wsdl:documentation>attachment information</wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retrieveResourceOutage">
+    <wsdl:part name="requestData" element="typeIn:RequestResourceOutage">
+      <wsdl:documentation>send request data</wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retrieveResourceOutageResponse">
+    <wsdl:part name="resourceOutageAttachment" element="attach:AttachmentInfor">
+      <wsdl:documentation>return resource outage data</wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="faultReturnType">
+    <wsdl:part name="faultReturn" element="typeFault:outputDataType">
+      <wsdl:documentation>fault information</wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="retrieveResourceOutage_v1">
+    <wsdl:operation name="retrieveResourceOutage_v1">
+      <wsdl:documentation>retrieve resource  outage data </wsdl:documentation>
+      <wsdl:input message="tns:retrieveResourceOutage" />
+      <wsdl:output message="tns:retrieveResourceOutageResponse" />
+      <wsdl:fault name="faultReturn" message="tns:faultReturnType" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="retrieveResourceOutage_Binding" type="tns:retrieveResourceOutage_v1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="retrieveResourceOutage_v1">
+      <soap:operation soapAction="http://www.caiso.com/soa/retrieveResourceOutage_v1" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header wsdl:required="true" message="tns:retrieveResourceOutageHeader" part="standardAttachmentInfor" use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="faultReturn">
+        <soap:fault use="literal" name="faultReturn" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="retrieveResourceOutage_v1Service">
+    <wsdl:port name="retrieveResourceOutageServicePort" binding="tns:retrieveResourceOutage_Binding">
+      <soap:address location="http://www.caiso.com/soa/retrieveResourceOutage_v1" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

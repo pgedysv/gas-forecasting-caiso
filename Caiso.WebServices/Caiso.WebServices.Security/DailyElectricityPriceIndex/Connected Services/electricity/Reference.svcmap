@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="09962e1a-d04a-497e-9e6e-bdb87113f89c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\eng\Documents\CMRI-ArtifactsPackage_v1_2_Fall2017Release\CMRI-ArtifactsPackage_v1_2_Fall2017Release\DailyElectricityPriceIndex\20171001\retrieveDailyElectricityPriceIndex_v1_DocAttach.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="StandardAttachmentInfor.xsd" MetadataType="Schema" ID="ab58c245-3eed-4c0e-bc28-df8c9f4d3884" SourceId="1" SourceUrl="file:///C:/Users/eng/Documents/CMRI-ArtifactsPackage_v1_2_Fall2017Release/CMRI-ArtifactsPackage_v1_2_Fall2017Release/DailyElectricityPriceIndex/20171001/StandardAttachmentInfor.xsd" />
+    <MetadataFile FileName="retrieveDailyElectricityPriceIndex_v1_DocAttach.wsdl" MetadataType="Wsdl" ID="5a693841-f7e4-41e4-9b4f-8babd1faac4e" SourceId="1" SourceUrl="file:///C:/Users/eng/Documents/CMRI-ArtifactsPackage_v1_2_Fall2017Release/CMRI-ArtifactsPackage_v1_2_Fall2017Release/DailyElectricityPriceIndex/20171001/retrieveDailyElectricityPriceIndex_v1_DocAttach.wsdl" />
+    <MetadataFile FileName="StandardOutput.xsd" MetadataType="Schema" ID="2d31c85f-677a-489a-a1b9-87ac34c25611" SourceId="1" SourceUrl="file:///C:/Users/eng/Documents/CMRI-ArtifactsPackage_v1_2_Fall2017Release/CMRI-ArtifactsPackage_v1_2_Fall2017Release/DailyElectricityPriceIndex/20171001/StandardOutput.xsd" />
+    <MetadataFile FileName="RequestDailyElectricityPriceIndex_v1.xsd" MetadataType="Schema" ID="6bd9dd51-959a-4b4d-95a0-7546479b72b6" SourceId="1" SourceUrl="file:///C:/Users/eng/Documents/CMRI-ArtifactsPackage_v1_2_Fall2017Release/CMRI-ArtifactsPackage_v1_2_Fall2017Release/DailyElectricityPriceIndex/20171001/RequestDailyElectricityPriceIndex_v1.xsd" />
+    <MetadataFile FileName="ISOAttachment.xsd" MetadataType="Schema" ID="706d731a-26f6-443a-a0b2-5ac74a445499" SourceId="1" SourceUrl="file:///C:/Users/eng/Documents/CMRI-ArtifactsPackage_v1_2_Fall2017Release/CMRI-ArtifactsPackage_v1_2_Fall2017Release/DailyElectricityPriceIndex/20171001/ISOAttachment.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

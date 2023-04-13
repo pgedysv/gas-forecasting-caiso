@@ -1,0 +1,109 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{106AE906-5075-410A-B941-912F811848EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B31B4797-1D9F-4288-808C-BE9A31A98C7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pge.GasOps.Caiso.Core", "src\Pge.GasOps.Caiso.Core\Pge.GasOps.Caiso.Core.csproj", "{4548EB20-1D1B-477B-AF6E-DD55653A6583}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "artifacts", "artifacts", "{A2D9E7BA-8991-4E62-A8C8-F986E102EC7C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GasBurnResourceData", "GasBurnResourceData", "{41026728-17D3-456B-A901-DA6800E7E176}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GasBurnSummaryData", "GasBurnSummaryData", "{2664E561-E6C8-4180-8161-A77FFF776999}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20171026", "20171026", "{5F2736A4-44FC-4A34-AABB-B9B0AB015C5A}"
+	ProjectSection(SolutionItems) = preProject
+		artifacts\GasBurnResourceData\20171026\GasBurnResourceData_v1.xsd = artifacts\GasBurnResourceData\20171026\GasBurnResourceData_v1.xsd
+		artifacts\GasBurnResourceData\20171026\ISOAttachment.xsd = artifacts\GasBurnResourceData\20171026\ISOAttachment.xsd
+		artifacts\GasBurnResourceData\20171026\RequestGasBurnResourceData_v1.xsd = artifacts\GasBurnResourceData\20171026\RequestGasBurnResourceData_v1.xsd
+		artifacts\GasBurnResourceData\20171026\retrieveGasBurnResourceData_v1.wsdl = artifacts\GasBurnResourceData\20171026\retrieveGasBurnResourceData_v1.wsdl
+		artifacts\GasBurnResourceData\20171026\retrieveGasBurnResourceData_v1_DocAttach.wsdl = artifacts\GasBurnResourceData\20171026\retrieveGasBurnResourceData_v1_DocAttach.wsdl
+		artifacts\GasBurnResourceData\20171026\StandardAttachmentInfor.xsd = artifacts\GasBurnResourceData\20171026\StandardAttachmentInfor.xsd
+		artifacts\GasBurnResourceData\20171026\StandardOutput.xsd = artifacts\GasBurnResourceData\20171026\StandardOutput.xsd
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20171026", "20171026", "{7C5061DF-512E-4293-968F-1F8DFC7CD03B}"
+	ProjectSection(SolutionItems) = preProject
+		artifacts\GasBurnSummaryData\20171026\GasBurnSummaryData_v1.cs = artifacts\GasBurnSummaryData\20171026\GasBurnSummaryData_v1.cs
+		artifacts\GasBurnSummaryData\20171026\GasBurnSummaryData_v1.xsd = artifacts\GasBurnSummaryData\20171026\GasBurnSummaryData_v1.xsd
+		artifacts\GasBurnSummaryData\20171026\GenerateGasBurnSummaryClasses.bat = artifacts\GasBurnSummaryData\20171026\GenerateGasBurnSummaryClasses.bat
+		artifacts\GasBurnSummaryData\20171026\ISOAttachment.xsd = artifacts\GasBurnSummaryData\20171026\ISOAttachment.xsd
+		artifacts\GasBurnSummaryData\20171026\RequestGasBurnSummaryData_v1.xsd = artifacts\GasBurnSummaryData\20171026\RequestGasBurnSummaryData_v1.xsd
+		artifacts\GasBurnSummaryData\20171026\retrieveGasBurnSummaryData_v1.wsdl = artifacts\GasBurnSummaryData\20171026\retrieveGasBurnSummaryData_v1.wsdl
+		artifacts\GasBurnSummaryData\20171026\retrieveGasBurnSummaryData_v1_DocAttach.wsdl = artifacts\GasBurnSummaryData\20171026\retrieveGasBurnSummaryData_v1_DocAttach.wsdl
+		artifacts\GasBurnSummaryData\20171026\StandardAttachmentInfor.xsd = artifacts\GasBurnSummaryData\20171026\StandardAttachmentInfor.xsd
+		artifacts\GasBurnSummaryData\20171026\StandardOutput.cs = artifacts\GasBurnSummaryData\20171026\StandardOutput.cs
+		artifacts\GasBurnSummaryData\20171026\StandardOutput.xsd = artifacts\GasBurnSummaryData\20171026\StandardOutput.xsd
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pge.GasOps.Caiso.Infrastructure", "src\Pge.GasOps.Caiso.Infrastructure\Pge.GasOps.Caiso.Infrastructure.csproj", "{C9872EB5-4185-46D8-BCC1-4C624045DD39}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pge.GasOps.Caiso.Web", "src\Pge.GasOps.Caiso.Web\Pge.GasOps.Caiso.Web.csproj", "{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583}.Debug|x64.Build.0 = Debug|Any CPU
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583}.Debug|x86.Build.0 = Debug|Any CPU
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583}.Release|x64.ActiveCfg = Release|Any CPU
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583}.Release|x64.Build.0 = Release|Any CPU
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583}.Release|x86.ActiveCfg = Release|Any CPU
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583}.Release|x86.Build.0 = Release|Any CPU
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39}.Debug|x64.Build.0 = Debug|Any CPU
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39}.Debug|x86.Build.0 = Debug|Any CPU
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39}.Release|x64.ActiveCfg = Release|Any CPU
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39}.Release|x64.Build.0 = Release|Any CPU
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39}.Release|x86.ActiveCfg = Release|Any CPU
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39}.Release|x86.Build.0 = Release|Any CPU
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}.Debug|x64.Build.0 = Debug|Any CPU
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}.Debug|x86.Build.0 = Debug|Any CPU
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}.Release|x64.ActiveCfg = Release|Any CPU
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}.Release|x64.Build.0 = Release|Any CPU
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}.Release|x86.ActiveCfg = Release|Any CPU
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4548EB20-1D1B-477B-AF6E-DD55653A6583} = {106AE906-5075-410A-B941-912F811848EE}
+		{41026728-17D3-456B-A901-DA6800E7E176} = {A2D9E7BA-8991-4E62-A8C8-F986E102EC7C}
+		{2664E561-E6C8-4180-8161-A77FFF776999} = {A2D9E7BA-8991-4E62-A8C8-F986E102EC7C}
+		{5F2736A4-44FC-4A34-AABB-B9B0AB015C5A} = {41026728-17D3-456B-A901-DA6800E7E176}
+		{7C5061DF-512E-4293-968F-1F8DFC7CD03B} = {2664E561-E6C8-4180-8161-A77FFF776999}
+		{C9872EB5-4185-46D8-BCC1-4C624045DD39} = {106AE906-5075-410A-B941-912F811848EE}
+		{AD7CB234-EC20-48B6-BE5C-F1AA1D687C96} = {106AE906-5075-410A-B941-912F811848EE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0F19343-8185-4A9F-9165-0EA8544BC925}
+	EndGlobalSection
+EndGlobal

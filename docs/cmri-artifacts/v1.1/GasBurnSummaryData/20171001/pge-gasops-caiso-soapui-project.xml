@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f5861295-0161-415b-b750-a58b0b586379" activeEnvironment="Default" name="pge-gasops-caiso" resourceRoot="" soapui-version="5.4.0" 
+    xmlns:con="http://eviware.com/soapui/config">
+    <con:settings/>
+    <con:properties/>
+    <con:wssContainer/>
+    <con:oAuth2ProfileContainer/>
+    <con:oAuth1ProfileContainer/>
+</con:soapui-project>

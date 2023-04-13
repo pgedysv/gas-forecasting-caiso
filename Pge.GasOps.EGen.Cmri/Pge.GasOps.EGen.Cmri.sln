@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pge.GasOps.EGen.Cmri.Core", "src\Pge.GasOps.EGen.Cmri.Core\Pge.GasOps.EGen.Cmri.Core.csproj", "{A5BF7AAB-9B29-43B2-8078-7F43C4F50C59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pge.GasOps.EGen.Cmri.Infrastructure", "src\Pge.GasOps.EGen.Cmri.Infrastructure\Pge.GasOps.EGen.Cmri.Infrastructure.csproj", "{206D86FD-9FEF-4E4A-AE9A-FD0344975332}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AA2B152D-F892-470F-BA0C-D13DC4F7A7FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5A8FF5A0-B645-4BEE-971E-CDA78DBFF467}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pge.GasOps.EGen.Cmri.Web.Tests", "tests\Pge.GasOps.EGen.Cmri.Web.Tests\Pge.GasOps.EGen.Cmri.Web.Tests.csproj", "{5A3C1B97-12A5-476E-B779-9EC0A7D09519}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pge.GasOps.EGen.Cmri.Web", "src\Pge.GasOps.EGen.Cmri.Web\Pge.GasOps.EGen.Cmri.Web.csproj", "{CCA4240D-B17C-4806-AAA7-22981AEC79F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caiso.WebServices.Security", "src\Caiso.WebServices.Security\Caiso.WebServices.Security.csproj", "{4770E233-25CD-4287-B597-BE1B57F77CBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5BF7AAB-9B29-43B2-8078-7F43C4F50C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5BF7AAB-9B29-43B2-8078-7F43C4F50C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5BF7AAB-9B29-43B2-8078-7F43C4F50C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5BF7AAB-9B29-43B2-8078-7F43C4F50C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{206D86FD-9FEF-4E4A-AE9A-FD0344975332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{206D86FD-9FEF-4E4A-AE9A-FD0344975332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{206D86FD-9FEF-4E4A-AE9A-FD0344975332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{206D86FD-9FEF-4E4A-AE9A-FD0344975332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A3C1B97-12A5-476E-B779-9EC0A7D09519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A3C1B97-12A5-476E-B779-9EC0A7D09519}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A3C1B97-12A5-476E-B779-9EC0A7D09519}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A3C1B97-12A5-476E-B779-9EC0A7D09519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA4240D-B17C-4806-AAA7-22981AEC79F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA4240D-B17C-4806-AAA7-22981AEC79F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA4240D-B17C-4806-AAA7-22981AEC79F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA4240D-B17C-4806-AAA7-22981AEC79F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4770E233-25CD-4287-B597-BE1B57F77CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4770E233-25CD-4287-B597-BE1B57F77CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4770E233-25CD-4287-B597-BE1B57F77CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4770E233-25CD-4287-B597-BE1B57F77CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A5BF7AAB-9B29-43B2-8078-7F43C4F50C59} = {AA2B152D-F892-470F-BA0C-D13DC4F7A7FE}
+		{206D86FD-9FEF-4E4A-AE9A-FD0344975332} = {AA2B152D-F892-470F-BA0C-D13DC4F7A7FE}
+		{5A3C1B97-12A5-476E-B779-9EC0A7D09519} = {5A8FF5A0-B645-4BEE-971E-CDA78DBFF467}
+		{CCA4240D-B17C-4806-AAA7-22981AEC79F8} = {AA2B152D-F892-470F-BA0C-D13DC4F7A7FE}
+		{4770E233-25CD-4287-B597-BE1B57F77CBF} = {AA2B152D-F892-470F-BA0C-D13DC4F7A7FE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F659C4BE-7B6A-4815-B2AA-89EF6D30116D}
+	EndGlobalSection
+EndGlobal

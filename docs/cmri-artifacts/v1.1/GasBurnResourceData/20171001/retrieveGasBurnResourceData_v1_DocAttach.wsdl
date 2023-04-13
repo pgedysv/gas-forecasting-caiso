@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <wsdl:definitions 
+   xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+   xmlns="http://schemas.xmlsoap.org/wsdl/"
+   xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
+
+   xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+   xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" 
+   xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+
+   targetNamespace="http://www.caiso.com/soa/retrieveGasBurnResourceData_v1_DocAttach.wsdl" 
+   xmlns:tns="http://www.caiso.com/soa/retrieveGasBurnResourceData_v1_DocAttach.wsdl"
+
+   xmlns:schemaInfor="http://www.caiso.com/soa/GasBurnResourceData_v1.xsd"
+
+   xmlns:typeIn="http://www.caiso.com/soa/RequestGasBurnResourceData_v1.xsd#"  
+   xmlns:typeHeader="http://www.caiso.com/soa/2006-06-13/StandardAttachmentInfor.xsd"  
+   xmlns:typeOut="http://www.caiso.com/soa/2006-10-26/ISOAttachment.xsd"
+   xmlns:typeFault="http://www.caiso.com/soa/2006-06-13/StandardOutput.xsd">
+
+   <wsdl:documentation>
+     A web service to retrieve Gas Burn Resource data 
+   </wsdl:documentation>
+  
+   <!-- type elements define data types used in this wsdl document using xml schema -->
+   <!-- note the namespaces defined matched up with the typeIn and typeOut defined above -->
+   <wsdl:types>
+     <xs:schema>
+       <xs:import namespace="http://www.caiso.com/soa/RequestGasBurnResourceData_v1.xsd#" schemaLocation="RequestGasBurnResourceData_v1.xsd" />
+    </xs:schema>
+    <xs:schema>
+       <xs:import namespace="http://www.caiso.com/soa/2006-06-13/StandardAttachmentInfor.xsd" schemaLocation="StandardAttachmentInfor.xsd" />
+    </xs:schema>
+     <xs:schema>
+       <xs:import namespace="http://www.caiso.com/soa/2006-10-26/ISOAttachment.xsd" schemaLocation="ISOAttachment.xsd" />
+    </xs:schema>
+    <xs:schema>    
+       <xs:import namespace="http://www.caiso.com/soa/2006-06-13/StandardOutput.xsd" schemaLocation="StandardOutput.xsd" />
+     </xs:schema>
+   </wsdl:types>
+
+   <!-- message elements define input and output parameters -->
+   <!-- a request and response case to use the data type defined in TYPE for payload -->
+   <wsdl:message name="retrieveGasBurnResourceData_DocAttachRequest">
+     <wsdl:part name="requestData" element="typeIn:RequestGasBurnResource">
+       <wsdl:documentation>send request date</wsdl:documentation>
+     </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="retrieveGasBurnResourceData_DocAttachHeader">
+     <!-- attachment wrapper -->
+     <wsdl:part name="standardAttachmentInfor" element="typeHeader:standardAttachmentInfor">
+       <wsdl:documentation>attachment information</wsdl:documentation>
+     </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="retrieveGasBurnResourceData_DocAttachResponse">
+     <wsdl:part name="GasBurnResourceData_attachment" element="typeOut:ISOAttachment">
+       <wsdl:documentation>return GasBurnResourceData data</wsdl:documentation>
+     </wsdl:part>
+   </wsdl:message>
+   <wsdl:message name="faultReturnType">
+     <wsdl:part name="faultReturn" element="typeFault:outputDataType">
+       <wsdl:documentation>fault information</wsdl:documentation>
+     </wsdl:part>
+   </wsdl:message>
+
+   <!-- portType elements define the abstract interface of a web service -->
+   <!-- to use the message type defined in message above -->
+   <wsdl:portType name="retrieveGasBurnResourceData_v1_DocAttach">
+     <wsdl:operation name="retrieveGasBurnResourceData_v1_DocAttach">
+       <wsdl:documentation>retrieve GasBurnResourceData data</wsdl:documentation>
+       <wsdl:input message="tns:retrieveGasBurnResourceData_DocAttachRequest" />
+       <wsdl:output message="tns:retrieveGasBurnResourceData_DocAttachResponse" />
+       <wsdl:fault name="faultReturn" message="tns:faultReturnType" />
+     </wsdl:operation>
+   </wsdl:portType>
+
+   <!-- binding elements define protocols and encoding styles -->
+   <!-- to bind the operation defined in portType -->
+   <wsdl:binding name="retrieveGasBurnResourceData_DocAttach_Binding" type="tns:retrieveGasBurnResourceData_v1_DocAttach">
+     <soap:binding style="document"
+      transport="http://schemas.xmlsoap.org/soap/http"/>
+     <wsdl:operation name="retrieveGasBurnResourceData_v1_DocAttach">
+       <soap:operation  style="document"
+        soapAction="http://www.caiso.com/soa/retrieveGasBurnResourceData_v1_DocAttach"/>
+       <wsdl:input>
+         <soap:body use="literal"/>
+       </wsdl:input>
+       <wsdl:output>
+         <soap:header message="tns:retrieveGasBurnResourceData_DocAttachHeader" 
+			part="standardAttachmentInfor" use="literal" wsdl:required="true"/>  
+         <soap:body use="literal" parts="GasBurnResourceData_attachment"/>
+       </wsdl:output>
+       <wsdl:fault name="faultReturn">
+         <soap:fault name="faultReturn" use="literal"/>
+       </wsdl:fault>
+     </wsdl:operation>
+   </wsdl:binding>
+
+   <wsdl:service name="retrieveGasBurnResourceData_v1_DocAttachService">
+	<wsdl:port name="retrieveGasBurnResourceData_DocAttachServicePort" binding="tns:retrieveGasBurnResourceData_DocAttach_Binding">
+		<soap:address location="http://www.caiso.com/soa/retrieveGasBurnResourceData_v1_DocAttach"/>
+	</wsdl:port>
+   </wsdl:service>
+
+ </wsdl:definitions>

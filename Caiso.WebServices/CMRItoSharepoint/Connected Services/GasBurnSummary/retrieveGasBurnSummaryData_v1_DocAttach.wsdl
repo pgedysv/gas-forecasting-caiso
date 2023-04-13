@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:typeFault="http://www.caiso.com/soa/2006-06-13/StandardOutput.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.caiso.com/soa/retrieveGasBurnSummaryData_v1_DocAttach.wsdl" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:schemaInfor="http://www.caiso.com/soa/GasBurnSummaryData_v1.xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:typeIn="http://www.caiso.com/soa/RequestGasBurnSummaryData_v1.xsd#" xmlns:typeOut="http://www.caiso.com/soa/2006-10-26/ISOAttachment.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:typeHeader="http://www.caiso.com/soa/2006-06-13/StandardAttachmentInfor.xsd" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.caiso.com/soa/retrieveGasBurnSummaryData_v1_DocAttach.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+     A web service to retrieve Gas Burn Summary data 
+   </wsdl:documentation>
+  <wsdl:types>
+    <xs:schema>
+      <xs:import schemaLocation="RequestGasBurnSummaryData_v1.xsd" namespace="http://www.caiso.com/soa/RequestGasBurnSummaryData_v1.xsd#" />
+    </xs:schema>
+    <xs:schema>
+      <xs:import schemaLocation="StandardAttachmentInfor.xsd" namespace="http://www.caiso.com/soa/2006-06-13/StandardAttachmentInfor.xsd" />
+    </xs:schema>
+    <xs:schema>
+      <xs:import schemaLocation="ISOAttachment.xsd" namespace="http://www.caiso.com/soa/2006-10-26/ISOAttachment.xsd" />
+    </xs:schema>
+    <xs:schema>
+      <xs:import schemaLocation="StandardOutput.xsd" namespace="http://www.caiso.com/soa/2006-06-13/StandardOutput.xsd" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="retrieveGasBurnSummaryData_DocAttachRequest">
+    <wsdl:part name="requestData" element="typeIn:RequestGasBurnSummaryData">
+      <wsdl:documentation>send request date</wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retrieveGasBurnSummaryData_DocAttachHeader">
+    <wsdl:part name="standardAttachmentInfor" element="typeHeader:standardAttachmentInfor">
+      <wsdl:documentation>attachment information</wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retrieveGasBurnSummaryData_DocAttachResponse">
+    <wsdl:part name="GasBurnSummaryData_attachment" element="typeOut:ISOAttachment">
+      <wsdl:documentation>return GasBurnSummaryData data</wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="faultReturnType">
+    <wsdl:part name="faultReturn" element="typeFault:outputDataType">
+      <wsdl:documentation>fault information</wsdl:documentation>
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="retrieveGasBurnSummaryData_v1_DocAttach">
+    <wsdl:operation name="retrieveGasBurnSummaryData_v1_DocAttach">
+      <wsdl:documentation>retrieve GasBurnSummaryData data</wsdl:documentation>
+      <wsdl:input message="tns:retrieveGasBurnSummaryData_DocAttachRequest" />
+      <wsdl:output message="tns:retrieveGasBurnSummaryData_DocAttachResponse" />
+      <wsdl:fault name="faultReturn" message="tns:faultReturnType" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="retrieveGasBurnSummaryData_DocAttach_Binding" type="tns:retrieveGasBurnSummaryData_v1_DocAttach">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="retrieveGasBurnSummaryData_v1_DocAttach">
+      <soap:operation soapAction="http://www.caiso.com/soa/retrieveGasBurnSummaryData_v1_DocAttach" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:header wsdl:required="true" message="tns:retrieveGasBurnSummaryData_DocAttachHeader" part="standardAttachmentInfor" use="literal" />
+        <soap:body use="literal" parts="GasBurnSummaryData_attachment" />
+      </wsdl:output>
+      <wsdl:fault name="faultReturn">
+        <soap:fault use="literal" name="faultReturn" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="retrieveGasBurnSummaryData_v1_DocAttachService">
+    <wsdl:port name="retrieveGasBurnSummaryData_DocAttachServicePort" binding="tns:retrieveGasBurnSummaryData_DocAttach_Binding">
+      <soap:address location="http://www.caiso.com/soa/retrieveGasBurnSummaryData_v1_DocAttach" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

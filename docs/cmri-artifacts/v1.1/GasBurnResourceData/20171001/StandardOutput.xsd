@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:m="http://www.caiso.com/soa/2006-06-13/StandardOutput.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.caiso.com/soa/2006-06-13/StandardOutput.xsd" elementFormDefault="qualified">
+	<xs:element name="outputDataType" type="m:outputDataType"/>
+	<xs:complexType name="outputDataType">
+		<xs:sequence>
+			<xs:element name="EventLog" type="m:EventLog" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EventLog">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" minOccurs="0"/>
+			<xs:element name="name" type="xs:string" minOccurs="0"/>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+			<xs:element name="type" type="xs:string" minOccurs="0"/>
+			<xs:element name="creationTime" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="collectionType" type="xs:string" minOccurs="0"/>
+			<xs:element name="collectionQuantity" type="xs:string" minOccurs="0"/>
+			<xs:element name="Event" type="m:Event" maxOccurs="unbounded"/>
+			<xs:element name="Service" type="m:Service" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Event">
+		<xs:sequence>
+			<xs:element name="result" type="xs:string"/>
+			<xs:element name="id" type="xs:string" minOccurs="0"/>
+			<xs:element name="name" type="xs:string" minOccurs="0"/>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+			<xs:element name="creationTime" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="severity" type="xs:string" minOccurs="0"/>
+			<xs:element name="priority" type="xs:string" minOccurs="0"/>
+			<xs:element name="sequenceNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="eventType" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Service">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string"/>
+			<xs:element name="name" type="xs:string"/>
+			<xs:element name="description" type="xs:string"/>
+			<xs:element name="comments" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:m="http://www.caiso.com/soa/2006-06-13/StandardAttachmentInfor.xsd" elementFormDefault="qualified" targetNamespace="http://www.caiso.com/soa/2006-06-13/StandardAttachmentInfor.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="standardAttachmentInfor" type="m:standardAttachmentInfor" />
+  <xs:complexType name="standardAttachmentInfor">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="Attachment" type="m:Attachment" />
+      <xs:element minOccurs="0" name="dummy" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Attachment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="description" type="xs:string" />
+      <xs:element minOccurs="0" name="version" type="xs:string" />
+      <xs:element minOccurs="0" name="sequenceNumber" type="xs:string" />
+      <xs:element minOccurs="0" name="type" type="xs:string" />
+      <xs:element minOccurs="0" name="size" type="xs:string" />
+      <xs:element minOccurs="0" name="source" type="xs:string" />
+      <xs:element minOccurs="0" name="tool" type="xs:string" />
+      <xs:element minOccurs="0" name="creationTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="compressFlag" type="m:compressFlag" />
+      <xs:element minOccurs="0" name="compressMethod" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AttributeList" type="m:AttributeList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="compressFlag">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="yes" />
+      <xs:enumeration value="no" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AttributeList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Sequence" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

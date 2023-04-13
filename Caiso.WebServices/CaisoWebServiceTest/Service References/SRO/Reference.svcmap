@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e70301c2-a79b-45de-ae17-9d9e169546fa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\CAISO Web Services\OMS_V1\SubmitResourceOutage_v1\submitResourceOutage_v1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OutageStandardOutput_v1.xsd" MetadataType="Schema" ID="cd94b76f-2102-4c90-9002-1cbf849ba8f1" SourceId="1" SourceUrl="file:///D:/CAISO Web Services/OMS_V1/SubmitResourceOutage_v1/OutageStandardOutput_v1.xsd" />
+    <MetadataFile FileName="submitResourceOutage_v1.wsdl" MetadataType="Wsdl" ID="fdf034fa-9217-43ed-9b27-e5f6c2101e4e" SourceId="1" SourceUrl="file:///D:/CAISO Web Services/OMS_V1/SubmitResourceOutage_v1/submitResourceOutage_v1.wsdl" />
+    <MetadataFile FileName="StandardAttachmentInfor.xsd" MetadataType="Schema" ID="e4131fde-178f-44a4-a2c7-094c78ff8039" SourceId="1" SourceUrl="file:///D:/CAISO Web Services/OMS_V1/SubmitResourceOutage_v1/StandardAttachmentInfor.xsd" />
+    <MetadataFile FileName="StandardOutput.xsd" MetadataType="Schema" ID="e716316f-c046-4794-a57a-5613548167a0" SourceId="1" SourceUrl="file:///D:/CAISO Web Services/OMS_V1/SubmitResourceOutage_v1/StandardOutput.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="50e8d200-9918-446b-b55a-678992281b51" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\eng\Documents\CMRI-ArtifactsPackage_v1_2_Fall2017Release\CMRI-ArtifactsPackage_v1_2_Fall2017Release\GasBurnSummaryData\20171001\retrieveGasBurnSummaryData_v1.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RequestGasBurnSummaryData_v1.xsd" MetadataType="Schema" ID="f806d3ac-4535-49ab-bd15-a5496b7357bc" SourceId="1" SourceUrl="file:///C:/Users/eng/Documents/CMRI-ArtifactsPackage_v1_2_Fall2017Release/CMRI-ArtifactsPackage_v1_2_Fall2017Release/GasBurnSummaryData/20171001/RequestGasBurnSummaryData_v1.xsd" />
+    <MetadataFile FileName="StandardAttachmentInfor.xsd" MetadataType="Schema" ID="6786aedc-18c6-4dea-b3ac-106ccac3441a" SourceId="1" SourceUrl="file:///C:/Users/eng/Documents/CMRI-ArtifactsPackage_v1_2_Fall2017Release/CMRI-ArtifactsPackage_v1_2_Fall2017Release/GasBurnSummaryData/20171001/StandardAttachmentInfor.xsd" />
+    <MetadataFile FileName="retrieveGasBurnSummaryData_v1.wsdl" MetadataType="Wsdl" ID="07c6e2a7-cf02-4cb0-bb40-c43d932c920f" SourceId="1" SourceUrl="file:///C:/Users/eng/Documents/CMRI-ArtifactsPackage_v1_2_Fall2017Release/CMRI-ArtifactsPackage_v1_2_Fall2017Release/GasBurnSummaryData/20171001/retrieveGasBurnSummaryData_v1.wsdl" />
+    <MetadataFile FileName="StandardOutput.xsd" MetadataType="Schema" ID="bcbd6540-dbaa-4a53-84eb-1dd7dd0413de" SourceId="1" SourceUrl="file:///C:/Users/eng/Documents/CMRI-ArtifactsPackage_v1_2_Fall2017Release/CMRI-ArtifactsPackage_v1_2_Fall2017Release/GasBurnSummaryData/20171001/StandardOutput.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

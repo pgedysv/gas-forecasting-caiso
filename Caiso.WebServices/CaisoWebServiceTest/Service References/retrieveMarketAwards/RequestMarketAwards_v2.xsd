@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.caiso.com/soa/RequestMarketAwards_v2.xsd" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.caiso.com/soa/RequestMarketAwards_v2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="RequestMarketAwards" type="RequestMarketAwards" />
+  <xs:complexType name="RequestMarketAwards">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageHeader" type="MessageHeader" />
+      <xs:element name="MessagePayload" type="MessagePayload" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageHeader">
+    <xs:annotation>
+      <xs:documentation>Message header containing descriptive information about the message.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TimeDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Application level relevant time and date for when this instance of the message was produced.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Source" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Source system which provides data for this service. Examples include ADS, CMRI, EMS, IFM, RLC, RTM, SIBR, SLIC, External App, etc.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="v20131201" name="Version" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Date reflecting the release this latest version update was related to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessagePayload">
+    <xs:sequence>
+      <xs:element name="RequestMarketAwardRecord" type="RequestMarketAwardRecord">
+        <xs:annotation>
+          <xs:documentation>Market Awards record</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RequestMarketAwardRecord">
+    <xs:sequence>
+      <xs:element name="dateTimeStart" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Starting DateTime of the time period for which the data is requested. Data ranging from n intervals up to 31 days can be included in report</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="dateTimeEnd" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Ending DateTime of the time period for which the data is requested. Data ranging from n intervals up to 31 days can be included in report</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="marketType" type="MarketType" />
+      <xs:element name="executionType" type="ExecutionType" />
+      <xs:element name="schedulingCoordinatorList" type="schedulingCoordinatorList" />
+      <xs:element minOccurs="0" name="resourceTypeList" type="resourceTypeList" />
+      <xs:element minOccurs="0" name="resourceSubTypeList" type="resourceSubTypeList" />
+      <xs:element minOccurs="0" name="productList" type="productList" />
+      <xs:element minOccurs="0" name="scheduleTypeList" type="scheduleTypeList" />
+      <xs:element minOccurs="0" name="contractTypeList" type="PTRContractTypeList" />
+      <xs:element minOccurs="0" name="locationList" type="locationList" />
+      <xs:element minOccurs="0" name="schedulingPointList" type="schedulingPointList" />
+      <xs:element minOccurs="0" name="directionList" type="directionList" />
+      <xs:element minOccurs="0" name="resourceList" type="resourceList" />
+      <xs:element minOccurs="0" name="energyTypeList" type="energyTypeList" />
+      <xs:element minOccurs="0" name="bindingFlagList" type="bindingFlagList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="schedulingCoordinatorList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="schedulingCoordinator" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resourceList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="resource" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="energyTypeList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="energyType" type="EnergyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="bindingFlagList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="bindingFlag" type="BindingFlagType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resourceTypeList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="resourceType" type="PTRResourceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="resourceSubTypeList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="resourceSubType" type="PTRResSubType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="productList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="product" type="MarketProductType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="scheduleTypeList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="scheduleType" type="PTRScheduleType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PTRContractTypeList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="contractType" type="PTRContractType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="locationList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="location" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="schedulingPointList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="schedulingPoint" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="directionList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="direction" type="InterTieDirection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="PTRResourceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GEN" />
+      <xs:enumeration value="LOAD" />
+      <xs:enumeration value="ITIE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PTRResSubType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PL" />
+      <xs:enumeration value="NPL" />
+      <xs:enumeration value="GEN" />
+      <xs:enumeration value="PUMP" />
+      <xs:enumeration value="ITIE_I" />
+      <xs:enumeration value="ITIE_E" />
+      <xs:enumeration value="SYNC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MarketType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DAM" />
+      <xs:enumeration value="RTM" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="EnergyType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="FIRM" />
+      <xs:enumeration value="NFIRM" />
+      <xs:enumeration value="DYN" />
+      <xs:enumeration value="WHL" />
+      <xs:enumeration value="UNT_CNTG" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BindingFlagType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Y" />
+      <xs:enumeration value="N" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MarketProductType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EN" />
+      <xs:enumeration value="RU" />
+      <xs:enumeration value="RD" />
+      <xs:enumeration value="SR" />
+      <xs:enumeration value="NR" />
+      <xs:enumeration value="RC_CAP" />
+      <xs:enumeration value="RC_AWD" />
+      <xs:enumeration value="LFU" />
+      <xs:enumeration value="LFD" />
+      <xs:enumeration value="RMU" />
+      <xs:enumeration value="RMD" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ExecutionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IFM" />
+      <xs:enumeration value="HASP" />
+      <xs:enumeration value="RTUC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PTRScheduleType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SELF" />
+      <xs:enumeration value="MARKET" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PTRContractType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ETC" />
+      <xs:enumeration value="TOR" />
+      <xs:enumeration value="RMT" />
+      <xs:enumeration value="CVR" />
+      <xs:enumeration value="PT" />
+      <xs:enumeration value="LPT" />
+      <xs:enumeration value="LOFF" />
+      <xs:enumeration value="BASE" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="InterTieDirection">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="E" />
+      <xs:enumeration value="I" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

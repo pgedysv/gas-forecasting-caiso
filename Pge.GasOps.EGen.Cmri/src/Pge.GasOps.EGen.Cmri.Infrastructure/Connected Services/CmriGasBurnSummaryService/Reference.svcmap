@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f8a08a24-0580-42e3-97f2-baf744ad0e2b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="C:\Users\AndrewPong\source\repos\pge-gasops-caiso\Pge.GasOps.EGen.Cmri\artifacts\GasBurnSummaryData\20171026\retrieveGasBurnSummaryData_v1_DocAttach.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ISOAttachment.xsd" MetadataType="Schema" ID="2dfc5cb8-ac02-4515-a9fd-20b3faaa9d83" SourceId="1" SourceUrl="file:///C:/Users/AndrewPong/source/repos/pge-gasops-caiso/Pge.GasOps.EGen.Cmri/artifacts/GasBurnSummaryData/20171026/ISOAttachment.xsd" />
+    <MetadataFile FileName="StandardAttachmentInfor.xsd" MetadataType="Schema" ID="77c8458f-99f8-4b7b-807f-a10f5ae9aff4" SourceId="1" SourceUrl="file:///C:/Users/AndrewPong/source/repos/pge-gasops-caiso/Pge.GasOps.EGen.Cmri/artifacts/GasBurnSummaryData/20171026/StandardAttachmentInfor.xsd" />
+    <MetadataFile FileName="retrieveGasBurnSummaryData_v1_DocAttach.wsdl" MetadataType="Wsdl" ID="7b7fd94a-1012-4f37-91e0-6f65adbeb4cb" SourceId="1" SourceUrl="file:///C:/Users/AndrewPong/source/repos/pge-gasops-caiso/Pge.GasOps.EGen.Cmri/artifacts/GasBurnSummaryData/20171026/retrieveGasBurnSummaryData_v1_DocAttach.wsdl" />
+    <MetadataFile FileName="StandardOutput.xsd" MetadataType="Schema" ID="0acdda70-3b0d-4ae7-a9c4-fe6f436baca1" SourceId="1" SourceUrl="file:///C:/Users/AndrewPong/source/repos/pge-gasops-caiso/Pge.GasOps.EGen.Cmri/artifacts/GasBurnSummaryData/20171026/StandardOutput.xsd" />
+    <MetadataFile FileName="RequestGasBurnSummaryData_v1.xsd" MetadataType="Schema" ID="d237e849-cc15-4a4b-9f2b-1c690df6e338" SourceId="1" SourceUrl="file:///C:/Users/AndrewPong/source/repos/pge-gasops-caiso/Pge.GasOps.EGen.Cmri/artifacts/GasBurnSummaryData/20171026/RequestGasBurnSummaryData_v1.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.caiso.com/soa/2006-10-26/ISOAttachment.xsd" elementFormDefault="qualified" targetNamespace="http://www.caiso.com/soa/2006-10-26/ISOAttachment.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AttachmentValue" type="xs:string" />
+  <xs:element name="ISOAttachment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="AttachmentValue" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

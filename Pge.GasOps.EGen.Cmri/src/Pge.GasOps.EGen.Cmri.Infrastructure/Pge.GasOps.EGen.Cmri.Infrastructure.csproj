@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{206D86FD-9FEF-4E4A-AE9A-FD0344975332}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pge.GasOps.EGen.Cmri.Infrastructure</RootNamespace>
+    <AssemblyName>Pge.GasOps.EGen.Cmri.Infrastructure</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\CmriGasBurnResourceService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\CmriGasBurnSummaryService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Certificates\CertificateFactory.cs" />
+    <Compile Include="Data\Certificates\X509CertificateFactory.cs" />
+    <Compile Include="Data\GasBurnSummaries\GasBurnSummaryService.cs" />
+    <Compile Include="Data\GasDays\GasDayService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\WebServices\WebServiceProxyFactory.cs" />
+    <Compile Include="Services\SharePointServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging">
+      <Version>3.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Console">
+      <Version>3.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug">
+      <Version>3.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SharePointOnline.CSOM">
+      <Version>16.1.19404.12000</Version>
+    </PackageReference>
+    <PackageReference Include="MSTest.TestAdapter">
+      <Version>2.2.10</Version>
+    </PackageReference>
+    <PackageReference Include="NodaTime">
+      <Version>2.4.7</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog.Extensions.Logging">
+      <Version>3.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog.Settings.Configuration">
+      <Version>3.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.ServiceModel.Duplex">
+      <Version>4.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.ServiceModel.Http">
+      <Version>4.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.ServiceModel.Primitives">
+      <Version>4.6.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.ServiceModel.Security">
+      <Version>4.6.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Caiso.WebServices.Security\Caiso.WebServices.Security.csproj">
+      <Project>{4770e233-25cd-4287-b597-be1b57f77cbf}</Project>
+      <Name>Caiso.WebServices.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pge.GasOps.EGen.Cmri.Core\Pge.GasOps.EGen.Cmri.Core.csproj">
+      <Project>{a5bf7aab-9b29-43b2-8078-7f43c4f50c59}</Project>
+      <Name>Pge.GasOps.EGen.Cmri.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\CmriGasBurnResourceService\ISOAttachment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CmriGasBurnResourceService\Pge.GasOps.EGen.Cmri.Infrastructure.CmriGasBurnResourceService.Attachment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CmriGasBurnResourceService\Pge.GasOps.EGen.Cmri.Infrastructure.CmriGasBurnResourceService.ISOAttachment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CmriGasBurnResourceService\RequestGasBurnResourceData_v1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CmriGasBurnResourceService\retrieveGasBurnResourceData_v1_DocAttach.wsdl" />
+    <None Include="Connected Services\CmriGasBurnResourceService\StandardAttachmentInfor.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CmriGasBurnResourceService\StandardOutput.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CmriGasBurnSummaryService\ISOAttachment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CmriGasBurnSummaryService\Pge.GasOps.EGen.Cmri.Infrastructure.CmriGasBurnSummaryService.Attachment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CmriGasBurnSummaryService\Pge.GasOps.EGen.Cmri.Infrastructure.CmriGasBurnSummaryService.ISOAttachment.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CmriGasBurnSummaryService\RequestGasBurnSummaryData_v1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CmriGasBurnSummaryService\retrieveGasBurnSummaryData_v1_DocAttach.wsdl" />
+    <None Include="Connected Services\CmriGasBurnSummaryService\StandardAttachmentInfor.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CmriGasBurnSummaryService\StandardOutput.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\CmriGasBurnResourceService\" />
+    <WCFMetadataStorage Include="Connected Services\CmriGasBurnSummaryService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CmriGasBurnSummaryService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CmriGasBurnSummaryService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CmriGasBurnSummaryService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CmriGasBurnResourceService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CmriGasBurnResourceService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\CmriGasBurnResourceService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

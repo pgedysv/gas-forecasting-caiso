@@ -1,0 +1,24 @@
+﻿{
+  "ProviderId": "Microsoft.VisualStudio.ConnectedService.Wcf",
+  "Version": "15.0.20406.879",
+  "ExtendedData": {
+    "Uri": "D:\\Projects\\dst\\pge-gasops-caiso\\Pge.GasOps.Caiso\\artifacts\\GasBurnSummaryData\\20171026\\retrieveGasBurnSummaryData_v1_DocAttach.wsdl",
+    "Namespace": "CmriGasBurnSummaryData",
+    "SelectedAccessLevelForGeneratedClass": "Internal",
+    "GenerateMessageContract": false,
+    "ReuseTypesinReferencedAssemblies": true,
+    "ReuseTypesinAllReferencedAssemblies": true,
+    "CollectionTypeReference": {
+      "Item1": "System.Array",
+      "Item2": "System.Runtime.dll"
+    },
+    "DictionaryCollectionTypeReference": {
+      "Item1": "System.Collections.Generic.Dictionary`2",
+      "Item2": "System.Collections.dll"
+    },
+    "CheckedReferencedAssemblies": [],
+    "InstanceId": null,
+    "Name": "CmriGasBurnSummaryData",
+    "Metadata": {}
+  }
+}

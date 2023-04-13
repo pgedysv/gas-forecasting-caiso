@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:m="http://www.caiso.com/soa/2006-06-13/StandardAttachmentInfor.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.caiso.com/soa/2006-06-13/StandardAttachmentInfor.xsd" elementFormDefault="qualified">
+	<xs:element name="standardAttachmentInfor" type="m:standardAttachmentInfor"/>
+	<xs:complexType name="standardAttachmentInfor">
+		<xs:sequence>
+			<xs:element name="Attachment" type="m:Attachment" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Attachment">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" minOccurs="0"/>
+			<xs:element name="name" type="xs:string" minOccurs="0"/>
+			<xs:element name="description" type="xs:string" minOccurs="0"/>
+			<xs:element name="version" type="xs:string" minOccurs="0"/>
+			<xs:element name="sequenceNumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="type" type="xs:string" minOccurs="0"/>
+			<xs:element name="size" type="xs:string" minOccurs="0"/>
+			<xs:element name="source" type="xs:string" minOccurs="0"/>
+			<xs:element name="tool" type="xs:string" minOccurs="0"/>
+			<xs:element name="creationTime" type="xs:dateTime" minOccurs="0"/>
+			<xs:element name="compressFlag" type="m:compressFlag" minOccurs="0"/>
+			<xs:element name="compressMethod" type="xs:string" minOccurs="0"/>
+			<xs:element name="AttributeList" type="m:AttributeList" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="compressFlag">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="yes"/>
+			<xs:enumeration value="no"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AttributeList">
+		<xs:sequence>
+			<xs:element name="Sequence" type="xs:string" minOccurs="0"/>
+			<xs:element name="Name" type="xs:string" minOccurs="0"/>
+			<xs:element name="Value" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

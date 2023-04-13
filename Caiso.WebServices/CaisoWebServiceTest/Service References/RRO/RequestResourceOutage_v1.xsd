@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://langdale.com.au/2005/Message#" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:m="http://www.caiso.com/soa/RequestResourceOutage_v1.xsd#" xmlns:a="http://langdale.com.au/2005/Message#" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.caiso.com/soa/RequestResourceOutage_v1.xsd#" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:documentation>v1 : Fall Release 2014</xs:documentation>
+  </xs:annotation>
+  <xs:element name="RequestResourceOutage" type="m:RequestResourceOutage" />
+  <xs:complexType name="RequestResourceOutage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MessageHeader" type="m:MessageHeader" />
+      <xs:element name="MessagePayload" type="m:MessagePayload" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageHeader">
+    <xs:annotation>
+      <xs:documentation>Message header containing descriptive information about the message.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="TimeDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Application level relevant time and date for when this  instance of the message was produced.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Source" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Source system which provides data for this service. Examples include ADS, CMRI, EMS, IFM, RLC, RTM, SIBR, SLIC, External App, etc.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element default="v20141001" name="Version" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Date reflecting the release this latest version update was related to.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessagePayload">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Outage" type="m:Outage" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OutageChangeRequest" type="m:OutageChangeRequest" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OutageRange" type="m:OutageRange" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Participant" type="m:Participant" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Resource" type="m:Resource" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#DateTimeInterval" name="DateTimeInterval">
+    <xs:annotation>
+      <xs:documentation>Interval between two date and time points.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#DateTimeInterval.end" minOccurs="1" maxOccurs="1" name="end" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>End date and time of this interval.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#DateTimeInterval.start" minOccurs="1" maxOccurs="1" name="start" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>Start date and time of this interval.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#Document" name="Document">
+    <xs:annotation>
+      <xs:documentation>Parent class for different groupings of information collected and managed as a part of a business process. It will frequently contain references to other objects, such as assets, people and power system resources.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="m:IdentifiedObject_mrid_opt" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject" name="IdentifiedObject_REST">
+    <xs:annotation>
+      <xs:documentation>This is a root class to provide common identification for all classes needing identification and naming attributes.</xs:documentation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject.mRID" minOccurs="1" maxOccurs="1" name="mRID" type="m:mrid">
+        <xs:annotation>
+          <xs:documentation>Master resource identifier issued by a model authority. The mRID is globally unique within an exchange context.</xs:documentation>
+          <xs:documentation>Global uniqeness is easily achived by using a UUID for the mRID. It is strongly recommended to do this.</xs:documentation>
+          <xs:documentation>For CIMXML data files in RDF syntax, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject" name="IdentifiedObject_mrid">
+    <xs:annotation>
+      <xs:documentation>This is a root class to provide common identification for all classes needing identification and naming attributes.</xs:documentation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject.mRID" minOccurs="1" maxOccurs="1" name="mRID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Master resource identifier issued by a model authority. The mRID is globally unique within an exchange context.</xs:documentation>
+          <xs:documentation>Global uniqeness is easily achived by using a UUID for the mRID. It is strongly recommended to do this.</xs:documentation>
+          <xs:documentation>For CIMXML data files in RDF syntax, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject" name="IdentifiedObject_mrid_opt">
+    <xs:annotation>
+      <xs:documentation>This is a root class to provide common identification for all classes needing identification and naming attributes.</xs:documentation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#IdentifiedObject.mRID" minOccurs="0" maxOccurs="1" name="mRID" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Master resource identifier issued by a model authority. The mRID is globally unique within an exchange context.</xs:documentation>
+          <xs:documentation>Global uniqeness is easily achived by using a UUID for the mRID. It is strongly recommended to do this.</xs:documentation>
+          <xs:documentation>For CIMXML data files in RDF syntax, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#MktOrganisation" name="MktOrganisation">
+    <xs:annotation>
+      <xs:documentation>Subclass of 61968:Core2:TopLevel:Organisation</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="m:Organisation" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#Organisation" name="Organisation">
+    <xs:annotation>
+      <xs:documentation>Organisation that might have roles as utility, contractor, supplier, manufacturer, customer, etc.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="m:IdentifiedObject_mrid" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://www.Caiso.com#Outage" name="Outage">
+    <xs:annotation>
+      <xs:documentation>Document describing details of an active or planned outage in a part of the electrical network.</xs:documentation>
+      <xs:documentation>A non-planned outage may be created upon:</xs:documentation>
+      <xs:documentation>- a breaker trip,</xs:documentation>
+      <xs:documentation>- a fault indicator status change,</xs:documentation>
+      <xs:documentation>- a meter event indicating customer outage,</xs:documentation>
+      <xs:documentation>- a reception of one or more customer trouble calls, or</xs:documentation>
+      <xs:documentation>- an operator command, reflecting information obtained from the field crew.</xs:documentation>
+      <xs:documentation>Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work.</xs:documentation>
+      <xs:documentation>A planned outage may be created upon:</xs:documentation>
+      <xs:documentation>- a request for service, maintenance or construction work in the field, or</xs:documentation>
+      <xs:documentation>- an operator-defined outage for what-if/contingency network analysis.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="m:Document">
+        <xs:sequence>
+          <xs:element sawsdl:modelReference="http://www.Caiso.com#Outage.mktOrgOutageID" minOccurs="0" maxOccurs="1" name="mktOrgOutageID" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Reference ID assigned to the outage by the external user.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://www.Caiso.com#OutageChangeRequest" name="OutageChangeRequest">
+    <xs:annotation />
+    <xs:complexContent mixed="false">
+      <xs:extension base="m:IdentifiedObject_mrid" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://www.Caiso.com#Request" name="OutageRange">
+    <xs:annotation>
+      <xs:documentation>Request parameters.</xs:documentation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element sawsdl:modelReference="http://www.Caiso.com#Request.Outage" minOccurs="0" maxOccurs="1" name="Outage" type="m:Outage_status">
+        <xs:annotation />
+      </xs:element>
+      <xs:element sawsdl:modelReference="http://www.Caiso.com#Request.rangePeriod" minOccurs="1" maxOccurs="1" name="rangePeriod" type="m:DateTimeInterval">
+        <xs:annotation>
+          <xs:documentation>Range start/end period.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType sawsdl:modelReference="http://www.Caiso.com#OutageStatusKind" name="OutageStatusKind">
+    <xs:annotation />
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="APPROVED">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="CANCELLED">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="DISAPPROVED">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="IN_OK">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="IN_SERVICE">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="IN_SERVICE_EDITABLE">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="ISO_HOLD">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="LATE_TO_END">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="LATE_TO_START">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="OE_NOT_RECOMMENDED">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="OE_RECOMMENDED">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="OUT">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="OUT_OK">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="PRE_APPROVED">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="RECEIVED">
+        <xs:annotation />
+      </xs:enumeration>
+      <xs:enumeration value="STUDY">
+        <xs:annotation />
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType sawsdl:modelReference="http://www.Caiso.com#Outage" name="Outage_status">
+    <xs:annotation>
+      <xs:documentation>Document describing details of an active or planned outage in a part of the electrical network.</xs:documentation>
+      <xs:documentation>A non-planned outage may be created upon:</xs:documentation>
+      <xs:documentation>- a breaker trip,</xs:documentation>
+      <xs:documentation>- a fault indicator status change,</xs:documentation>
+      <xs:documentation>- a meter event indicating customer outage,</xs:documentation>
+      <xs:documentation>- a reception of one or more customer trouble calls, or</xs:documentation>
+      <xs:documentation>- an operator command, reflecting information obtained from the field crew.</xs:documentation>
+      <xs:documentation>Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work.</xs:documentation>
+      <xs:documentation>A planned outage may be created upon:</xs:documentation>
+      <xs:documentation>- a request for service, maintenance or construction work in the field, or</xs:documentation>
+      <xs:documentation>- an operator-defined outage for what-if/contingency network analysis.</xs:documentation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element sawsdl:modelReference="http://www.Caiso.com#Outage.outageStatus" minOccurs="0" maxOccurs="1" name="outageStatus" type="m:OutageStatusKind">
+        <xs:annotation>
+          <xs:documentation>The current state of the outage.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://www.Caiso.com#Request" name="Participant">
+    <xs:annotation>
+      <xs:documentation>Request parameters.</xs:documentation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element sawsdl:modelReference="http://www.Caiso.com#Request.MktOrganisation" minOccurs="1" maxOccurs="1" name="MktOrganisation" type="m:MktOrganisation">
+        <xs:annotation />
+      </xs:element>
+      <xs:element sawsdl:modelReference="http://www.Caiso.com#Request.Outage" minOccurs="0" maxOccurs="1" name="Outage" type="m:Outage_status">
+        <xs:annotation />
+      </xs:element>
+      <xs:element sawsdl:modelReference="http://www.Caiso.com#Request.rangePeriod" minOccurs="1" maxOccurs="1" name="rangePeriod" type="m:DateTimeInterval">
+        <xs:annotation>
+          <xs:documentation>Range start/end period.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#PowerSystemResource" name="PowerSystemResource">
+    <xs:annotation>
+      <xs:documentation>A power system resource can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="m:IdentifiedObject_REST" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#RegisteredGenerator" name="RegisteredGenerator">
+    <xs:annotation>
+      <xs:documentation>Model of a generator  that is registered to participate in the market</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="m:RegisteredResource" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#RegisteredInterTie" name="RegisteredInterTie">
+    <xs:annotation>
+      <xs:documentation>This class represents the inter tie resource.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="m:RegisteredResource" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#RegisteredLoad" name="RegisteredLoad">
+    <xs:annotation>
+      <xs:documentation>Model of a load that is registered to participate in the market (demand reduction)</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="m:RegisteredResource" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://iec.ch/TC57/2010/CIM-schema-cim15#RegisteredResource" name="RegisteredResource">
+    <xs:annotation>
+      <xs:documentation>A resource that is registered through the RTO participant registration system. Examples include generating unit, customer meter, and a non-physical generator or load.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="m:PowerSystemResource" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType sawsdl:modelReference="http://www.Caiso.com#Request" name="Resource">
+    <xs:annotation>
+      <xs:documentation>Request parameters.</xs:documentation>
+      <xs:documentation />
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element sawsdl:modelReference="http://www.Caiso.com#Request.Outage" minOccurs="0" maxOccurs="1" name="Outage" type="m:Outage_status">
+        <xs:annotation />
+      </xs:element>
+      <xs:element sawsdl:modelReference="http://www.Caiso.com#Request.rangePeriod" minOccurs="1" maxOccurs="1" name="rangePeriod" type="m:DateTimeInterval">
+        <xs:annotation>
+          <xs:documentation>Range start/end period.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:choice sawsdl:modelReference="http://www.Caiso.com#Request.RegisteredResource" minOccurs="1" maxOccurs="unbounded">
+        <xs:annotation />
+        <xs:element sawsdl:modelReference="" minOccurs="1" maxOccurs="1" name="RegisteredGenerator" type="m:RegisteredGenerator">
+          <xs:annotation />
+        </xs:element>
+        <xs:element sawsdl:modelReference="" minOccurs="1" maxOccurs="1" name="RegisteredInterTie" type="m:RegisteredInterTie">
+          <xs:annotation />
+        </xs:element>
+        <xs:element sawsdl:modelReference="" minOccurs="1" maxOccurs="1" name="RegisteredLoad" type="m:RegisteredLoad">
+          <xs:annotation />
+        </xs:element>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="mrid">
+    <xs:restriction base="xs:string">
+      <xs:maxLength value="32" />
+      <xs:minLength value="1" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
